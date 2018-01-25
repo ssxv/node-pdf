@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+<body>
+  <div style="text-align: center;">
+    <h2>PDF Generation, with custom templating using Node</h2>
+    <h2>Ensure you have internet connection, for HTML template to download...</h2>
+    <ul style="width: 150px; margin: 0px auto; font-size: 22px;">
+      <li>bootstrap</li>
+      <li>font-awesome</li>
+      <li>j-query</li>
+    </ul>
+    <br/>
+    <input style="height: 30px; width: 200px;" type="button" value="Generate PDF" onclick="requestPDFGeneration();"/>
+    <h2>Generated PDF will be in <b>Projects /output/</b> directory</h2>
+  </div>
+
+  <script>
+    function requestPDFGeneration() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          alert('PDF request taken - check "output" directory');
+        }
+      };
+      xhttp.open("GET", "http://localhost:3000/pdf", true);
+      xhttp.send();
+    }
+  </script>
+</body>
+</html>

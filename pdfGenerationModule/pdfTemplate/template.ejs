@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+    .page {
+      height: 8in;
+    }
+
+    .nopadding {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div style="width: 100%">
+
+    <!-- Intro Page -->
+    <div class="row nopadding page">
+      <div class="col-md-5" style="padding-top: 200px; padding-left: 100px;">
+        <div style="font-size: 70px; font-weight: bold;margin-bottom: 50px;"><%=country%></div>
+        <div style="font-size: 36px;margin-bottom: 170px;font-weight: 700;">
+          <%=year%>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <img style="padding: 80px; height: 100%; width: 100%;" src="<%=profile%>">
+      </div>
+    </div>
+
+    <!-- Stats Page -->
+    <div class="row nopadding page">
+      <div style="height: 90%; padding: 5% 10% 0% 10%;">
+        <div class="col-md-8">
+          <div style="font-size: 30px; font-weight: bold; margin-bottom: 26%;">
+            <%=country%> Census Data</div>
+            <table style="font-size: 25px;">
+              <tr>
+                <td style="text-align: center;">
+                  <i class="fa-icon-style fa fa-users"></i>
+                </td>
+                <td style="padding-left: 20px;">
+                  Population : <%=population%>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">
+                    <i class="fa-icon-style fa fa-percent"></i>
+                </td>
+                <td style="padding-left: 20px;">
+                  Unemployment Rate : <%=unemployment%>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">
+                    <i class="fa-icon-style fa fa-money"></i>
+                </td>
+                <td style="padding-left: 20px;">
+                  Wages : <%=wage%>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">
+                    <i class="fa-icon-style fa fa-briefcase"></i>
+                </td>
+                <td style="padding-left: 20px;">
+                  Age Of Retirement (Men) : <%=retirement%>
+                </td>
+              </tr>
+            </table>
+        </div>
+        <div class="col-md-4" style="padding-top: 12%;">
+          <img style="width: 300px; height: 300px;" src="<%=flag%>">
+        </div>
+      </div>
+
+      <%- include('./footer.ejs', {pageNumber: 2}) %>
+    </div>
+
+    <!-- Chart Page -->
+    <div class="row nopadding page">
+      <div style="height: 90%; padding: 5% 10% 0% 10%;">
+        <div style="margin-bottom:20px;">
+          <div style="font-size: 30px; font-weight: bold; margin-bottom:20px">
+            <%=charts[0].title%>
+          </div>
+        </div>
+        <img src="<%=charts[0].chart%>" style="height: 80%; width: 100%" />
+      </div>
+
+      <%- include('./footer.ejs', {pageNumber: 3}) %>
+    </div>
+
+    <!-- Last Page -->
+    <div class="row nopadding page">
+      <div style="height: 90%;">
+        <div style="padding: 125px 80px 0px 80px;">
+          <div class="col-md-12">
+            <div style="font-size: 38px; text-align: center;">Data from Trading Economics</div>
+          </div>
+        </div>
+        <div style="padding: 120px 80px 0px 80px;">
+          <div class="col-md-12 text-center" style="padding-left: 50px;">
+            <div style="font-size: 32px;margin-top: 100px;font-weight: 600;"><i class="fa fa-globe"></i> Website</div>
+            <a style="font-size: 18px;border-bottom: 1px solid;" href="https://tradingeconomics.com/">tradingeconomics.com/</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
